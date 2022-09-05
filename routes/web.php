@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Redirect;
+use App\Http\Controllers\AllMailsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,8 +17,18 @@ use App\Http\Controllers\Redirect;
 
 Route::get('/', [Redirect::class, 'redir']);
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+Route::get('/dashboard', [AllMailsController::class, 'show'])->middleware(['auth'])->name('dashboard');
+
+Route::get('/sent', function () {
+    return view('sent');
+})->middleware(['auth'])->name('sent');
+
+Route::get('/received', function () {
+    return view('received');
+})->middleware(['auth'])->name('received');
+
+Route::get('/spam', function () {
+    return view('spam');
+})->middleware(['auth'])->name('spam');
 
 require __DIR__.'/auth.php';

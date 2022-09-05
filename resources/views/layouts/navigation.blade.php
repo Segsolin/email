@@ -13,7 +13,16 @@
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                        {{ __('Dashboard') }}
+                        {{ __('All Mails') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('sent')" :active="request()->routeIs('sent')">
+                        {{ __('Sent Mails') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('received')" :active="request()->routeIs('received')">
+                        {{ __('Recieved Mails') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('spam')" :active="request()->routeIs('spam')">
+                        {{ __('Spam Mails') }}
                     </x-nav-link>
                 </div>
             </div>
