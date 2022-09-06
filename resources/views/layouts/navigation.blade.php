@@ -24,6 +24,9 @@
                     <x-nav-link :href="route('spam')" :active="request()->routeIs('spam')">
                         {{ __('Spam Mails') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('compose')" :active="request()->routeIs('compose')">
+                        {{ __('Compose Mail') }}
+                    </x-nav-link>
                 </div>
             </div>
 

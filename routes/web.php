@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Redirect;
 use App\Http\Controllers\AllMailsController;
+use App\Http\Controllers\Compose;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,16 +20,18 @@ Route::get('/', [Redirect::class, 'redir']);
 
 Route::get('/dashboard', [AllMailsController::class, 'show'])->middleware(['auth'])->name('dashboard');
 
-Route::get('/sent', function () {
-    return view('sent');
-})->middleware(['auth'])->name('sent');
+Route::post('/compose', [Compose::class, 'sendMail']);
 
-Route::get('/received', function () {
-    return view('received');
-})->middleware(['auth'])->name('received');
+Route::get('/sent', [AllMailsController::class, 'findSent'])->middleware(['auth'])->name('sent');
+
+Route::get('/received',[AllMailsController::class, 'findReceived'])->middleware(['auth'])->name('received');
 
 Route::get('/spam', function () {
     return view('spam');
 })->middleware(['auth'])->name('spam');
+
+Route::get('/compose', function () {
+    return view('compose');
+})->middleware(['auth'])->name('compose');
 
 require __DIR__.'/auth.php';
