@@ -26,9 +26,7 @@ Route::get('/sent', [AllMailsController::class, 'findSent'])->middleware(['auth'
 
 Route::get('/received',[AllMailsController::class, 'findReceived'])->middleware(['auth'])->name('received');
 
-Route::get('/spam', function () {
-    return view('spam');
-})->middleware(['auth'])->name('spam');
+Route::get('/spam', [AllMailsController::class, 'findSpam'])->middleware(['auth'])->name('spam');
 
 Route::get('/compose', function () {
     return view('compose');

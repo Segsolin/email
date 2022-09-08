@@ -14,7 +14,8 @@
                         <div class="m-4">
                             <span class="text-gray-700">Sender</span>
                             <input type="email" class="form-input px-4 py-3 rounded-full"
-                                value="{{ Auth::user()->email }}" name="sender" readonly>
+                                value="{{ Auth::user()->email }}" name="sender" readonly />
+                            <input type="hidden" value="0" name="harm" id="spam" />
                         </div>
                         <div class="m-4">
                             <span class="text-gray-700">Receiver</span>
@@ -31,7 +32,7 @@
                         </div>
                         <div class="m-4">
                             <span class="text-gray-700">Message</span>
-                            <textarea class="mt-1 block w-full" rows="3" placeholder="Message" name="message"></textarea>
+                            <textarea id="message" class="mt-1 block w-full" rows="3" placeholder="Message" name="message"></textarea>
                         </div>
                         <div class="m-4">
                             <button

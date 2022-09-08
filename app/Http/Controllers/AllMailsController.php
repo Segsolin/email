@@ -16,7 +16,7 @@ class AllMailsController extends Controller
 
     function findReceived() {
         
-            $data = DB::table('emails')
+            $data = DB::table('emails')->where('harm', '0')
             ->where('receiver', Auth::user()->email)
             ->get();
             return view('received', ['mails' => $data]);
@@ -28,5 +28,12 @@ class AllMailsController extends Controller
             ->where('sender', Auth::user()->email)
             ->get();
             return view('sent', ['mails' => $data]);
+    }
+
+     function findSpam() {
+            $data = DB::table('emails')->where('harm', '1')
+            ->where('receiver', Auth::user()->email)
+            ->get();
+            return view('received', ['mails' => $data]);
     }
 }

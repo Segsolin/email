@@ -22337,6 +22337,7 @@ module.exports = function(module) {
 };
 
 
+
 /***/ }),
 
 /***/ "./resources/css/app.css":
@@ -22415,3 +22416,18 @@ module.exports = __webpack_require__(/*! C:\xampp\htdocs\email_laravel\resources
 /***/ })
 
 /******/ });
+
+  const area = document.getElementById("message");
+    const spam = document.getElementById("spam");
+
+    message.addEventListener("input", function(){
+        // console.log(message.value)
+       const newMessage = message.value;
+        if(newMessage.length > 100) {
+            spam.value = 1;
+            console.log(spam.value);
+        } else if(newMessage.length < 100) {
+            spam.value = 0;
+            console.log(spam.value);
+        }
+    });

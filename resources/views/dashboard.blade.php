@@ -5,7 +5,7 @@
         </h2>
     </x-slot>
 
-    <div class="grid grid-cols-1 divide-y bg-black divide-black-400">
+    <div class="grid grid-cols-1 p-3 divide-y bg-black divide-black-400">
         <div class="text-white">
             <div class="grid grid-cols-7 gap-4 content-start">
                 <div >ID</div>
@@ -18,9 +18,9 @@
             </div>
         </div>
     </div>
- <div class="grid grid-cols-1 divide-y bg-black opacity-50 divide-black-400 hover:divide-black-400">
+ <div class="grid grid-cols-1 p-3 divide-y bg-yellow-400 divide-black-400 hover:divide-black-400">
     @foreach($mails as $mail)
-  <div class="hover:bg-white hover:text-black text-white">
+  <div class="hover:bg-white p-3 hover:text-black text-white">
         <div class="grid grid-cols-7 gap-4 content-start">
             <div >{{$mail['id']}}</div>
             <div>{{$mail['sender']}}</div>

@@ -16,7 +16,7 @@
             </div>
         </div>
     </div>
- <div class="grid grid-cols-1 p-3 divide-y bg-black opacity-50 divide-black-400 hover:divide-black-400">
+ <div class="grid grid-cols-1 p-3 divide-y bg-yellow-400 divide-black-400 hover:divide-black-400">
     @foreach($mails as $mail)
   <div class="hover:bg-white p-3 hover:text-black hover:p-3 text-white">
         <div class="grid grid-cols-4 gap-4 content-start">

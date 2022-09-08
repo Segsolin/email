@@ -11,9 +11,10 @@ class Compose extends Controller
          $email = new Email;
          $email->sender=$req->sender;
          $email->receiver=$req->receiver;
-         $email->spam=$req->spam;
+         $email->harm=$req->harm;
          $email->subject=$req->subject;
          $email->message=$req->message;
          $email->save();
+         return redirect('compose');
     }
 }
