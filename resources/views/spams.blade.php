@@ -32,7 +32,7 @@
                  @csrf
                 <input type="hidden" value="{{$mail->id}}" name="id" />
                 <input type="hidden" value="0" name="harm"/>
-                <button class="bg-red-400 p-3 rounded hover:bg-red-500 hover:text-white text-white">UPDATE</button>
+                <button class="bg-blue-400 p-3 rounded hover:bg-red-500 hover:text-white text-white">HAM</button>
             </form>
         </div>
   </div>
