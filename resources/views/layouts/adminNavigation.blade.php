@@ -12,17 +12,14 @@
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('received')" :active="request()->routeIs('received')">
-                        {{ __('Recieved Mails') }}
+                    <x-nav-link :href="route('admin')" :active="request()->routeIs('admin')">
+                        {{ __('All Mails') }}
                     </x-nav-link>
-                      <x-nav-link :href="route('sent')" :active="request()->routeIs('sent')">
-                        {{ __('Sent Mails') }}
+                    <x-nav-link :href="route('ham')" :active="request()->routeIs('ham')">
+                        {{ __('Ham Mails') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('spam')" :active="request()->routeIs('spam')">
+                    <x-nav-link :href="route('spams')" :active="request()->routeIs('spams')">
                         {{ __('Spam Mails') }}
-                    </x-nav-link>
-                    <x-nav-link :href="route('compose')" :active="request()->routeIs('compose')">
-                        {{ __('Compose Mail') }}
                     </x-nav-link>
                 </div>
             </div>

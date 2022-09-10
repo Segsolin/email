@@ -1,4 +1,4 @@
-<x-app-layout>
+<x-app-admin>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('All Mails') }}
@@ -15,6 +15,7 @@
                 <div>MESSAGE</div>
                 <div>SPAM</div>
                 <div>SENT DATE</div>
+                {{-- <div>RECLASSIFY</div> --}}
             </div>
         </div>
     </div>
@@ -30,7 +31,8 @@
             <div>{{$mail['spam']}}</div>
             <div>{{$mail['created_at']}}</div>
         </div>
+        </div>
   </div>
       @endforeach
 </div>
-</x-app-layout>
+</x-app-admin>

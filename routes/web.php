@@ -20,13 +20,23 @@ Route::get('/', [Redirect::class, 'redir']);
 
 Route::get('/dashboard', [AllMailsController::class, 'show'])->middleware(['auth'])->name('dashboard');
 
+Route::get('/admin', [AllMailsController::class, 'show'])->middleware(['auth'])->name('admin');
+
 Route::post('/compose', [Compose::class, 'sendMail']);
+
+Route::post('/ham', [AllMailsController::class, 'updateSpam']);
+
+Route::post('/spam', [AllMailsController::class, 'updateHam']);
 
 Route::get('/sent', [AllMailsController::class, 'findSent'])->middleware(['auth'])->name('sent');
 
 Route::get('/received',[AllMailsController::class, 'findReceived'])->middleware(['auth'])->name('received');
 
+Route::get('/ham',[AllMailsController::class, 'findHam'])->middleware(['auth'])->name('ham');
+
 Route::get('/spam', [AllMailsController::class, 'findSpam'])->middleware(['auth'])->name('spam');
+
+Route::get('/spams', [AllMailsController::class, 'findSpams'])->middleware(['auth'])->name('spams');
 
 Route::get('/compose', function () {
     return view('compose');
